@@ -1,7 +1,11 @@
 const express = require("express");
 const sqlite3 = require("sqlite3").verbose();
+const cors = require("cors"); // Importar o pacote cors
 const app = express();
 const PORT = 3000;
+
+// Habilitar CORS para todas as origens
+app.use(cors());
 
 // Função para conectar ao banco de dados e buscar os dados de PIB
 function obterPibDB(callback) {
